@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-container">
+
+
+    <div class="left-menu">
+        <h2>Pick Color from Image</h2>
+
+        <div class="menu-item filter-button" id="filterButton">
+            Filter
+        </div>
+        <div id="filterContent" class="filter-content">
+
+            <div class="collapsible">
+                <div class="collapsible-header">
+                    Brands <span class="arrow">▼</span>
+                </div>
+                <div class="collapsible-content" id="brandsList"></div>
+            </div>
+
+            <div class="collapsible">
+                <div class="collapsible-header">
+                    Series <span class="arrow">▼</span>
+                </div>
+                <div class="collapsible-content" id="seriesList"></div>
+            </div>
+        </div>
+
+        <div class="menu-item">Wishlist</div>
+        <div class="menu-item">History</div>
+    </div>
+
+
+
+
+    <div class="main-content">
+        <div class="top-bar">
+            <h1>Model Paint Color Search</h1>
+        </div>
+
+        <div class="image-container">
+            <input type="file" id="imageInput" accept="image/*" style="display:none;">
+            <canvas id="imageCanvas"></canvas>
+            <div id="uploadOverlay">Click to upload an image</div>
+            <div id="removeImageBtn">×</div>
+        </div>
+
+        <div class="selection-section">
+            <h3>Selected Colors</h3>
+            <div id="selectedColors"></div>
+        </div>
+
+        <div class="result-section">
+            <h3>Closest Matches</h3>
+            <div id="matchResults"></div>
+        </div>
+    </div>
+
+    <div id="advancedPanel" class="advanced-panel">
+        <div class="advanced-header" id="advancedHeader">
+            <span>Adjust Color</span>
+            <button id="advancedCloseBtn">×</button>
+        </div>
+        <div class="advanced-body">
+            <div class="advanced-preview">
+                <div id="advancedColorPreview"></div>
+            </div>
+            <div class="advanced-slider">
+                <label for="hueSlider">Hue (<span id="hueValue">0</span>°)</label>
+                <input type="range" id="hueSlider" min="-180" max="180" value="0">
+            </div>
+            <div class="advanced-slider">
+                <label for="saturationSlider">Saturation (<span id="saturationValue">0</span>%)</label>
+                <input type="range" id="saturationSlider" min="-100" max="100" value="0">
+            </div>
+            <div class="advanced-slider">
+                <label for="lightnessSlider">Lightness (<span id="lightnessValue">0</span>%)</label>
+                <input type="range" id="lightnessSlider" min="-100" max="100" value="0">
+            </div>
+            <div class="advanced-buttons">
+                <button id="advancedApplyBtn">Apply</button>
+                <button id="advancedCancelBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
